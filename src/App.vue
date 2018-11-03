@@ -1,18 +1,45 @@
 <!-- Root component -->
 <template>
     <!-- we have to have one element sround every thing -->
-
     <div id="app">
+        <div class="filters-sideBar">
+            <h1>{{work}}</h1>
+            <div class="dropDown">
+                <select name="" id="sizeFilter">
+                    <option value="">Select room size</option>
+                    <option value=""></option>
+                </select>
+                <select name="" id="typeFilter">
+                    <option value="">select room Type</option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="checkBoxes">
 
+            </div>
+        </div>
+        <div class="container">
+            <!--  Rooms List  -->
+            <ul class="roomsList">
+                <li class="room" v-for="room in rooms">
+
+                    <img v-bind:src="room.img" alt="">
+                    <div class="Discription">
+                        <div class="info">
+                            <h2>FavoRoom</h2>
+                            <p>{{room.info}}</p>
+                            <p>{{room.type}}</p>
+                        </div>
+                        <button class="price-btn">{{room.price}}</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
-<script>
-    export default {
-        name: 'app'
-    }
-
-</script>
+<script src="./App.js"></script>
+<style src="./AppStyle.css"></style>
 
 <style>
 
