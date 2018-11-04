@@ -3,70 +3,70 @@
 
 const roomsList = [
     {
-        img: 'https://picsum photos/250/150/?random',
+        img: 'https://picsum photos/250/150',
         type: 'vip',
         size: 'larg',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
         servces: [],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150/?random',
+        img: 'https://picsum photos/250/150',
         type: 'vip',
-        size: 'larg',
+        size: 'small',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
         servces: [],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150/?random',
+        img: 'https://picsum photos/250/150',
         type: 'special',
         size: 'small',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
         servces: [],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150/?random',
+        img: 'https://picsum photos/250/150',
         type: 'special',
         size: 'small',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
         servces: [],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150/?random',
+        img: 'https://picsum photos/250/150',
         type: 'vip',
-        size: 'larg',
+        size: 'medium',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
         servces: [],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150/?random',
+        img: 'https://picsum photos/250/150',
         type: 'special',
         size: 'larg',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
         servces: [],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150/?random',
+        img: 'https://picsum photos/250/150',
         type: 'normal',
         size: 'small',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
         servces: [],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150/?random',
+        img: 'https://picsum photos/250/150',
         type: 'special',
         size: 'medium',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
         servces: [],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150/?random',
+        img: 'https://picsum photos/250/150',
         type: 'normal',
         size: 'small',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
         servces: [],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150/?random',
+        img: 'https://picsum photos/250/150',
         type: 'vip',
         size: 'larg',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
@@ -83,12 +83,12 @@ export default {
             rooms: roomsList
         }
     },
-    methods: {
-        roomFilterByType: function (room) {
+    methods: { //no need to pass an event arguments vue automaticly knew tha👀t
+        roomFilterByType: function (event) {
             console.log(event.target.value);
             this.type = event.target.value;
         },
-        roomFilterBySize: function (room) {
+        roomFilterBySize: function (event) {
             console.log(event.target.value);
             this.size = event.target.value;
         }
