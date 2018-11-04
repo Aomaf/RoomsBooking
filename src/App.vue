@@ -5,13 +5,13 @@
         <div class="filters-sideBar">
             <h1>{{work}}</h1>
             <div class="dropDown">
-                <select name="" id="sizeFilter">
+                <select name="" id="sizeFilter" v-on:change="roomFillterByType">
                     <option value="">Select room size</option>
-                    <option value=""></option>
+                    <option value="" v-for="type in uniqueTypes">{{type}}</option>
                 </select>
-                <select name="" id="typeFilter">
+                <select name="" id="typeFilter" v-on:change="roomFillterBySize">
                     <option value="">select room Type</option>
-                    <option value=""></option>
+                    <option value="" v-for="size in uniqueSizes">{{size}}</option>
                 </select>
             </div>
             <div class="checkBoxes">
@@ -22,7 +22,6 @@
             <!--  Rooms List  -->
             <ul class="roomsList">
                 <li class="room" v-for="room in rooms">
-
                     <img v-bind:src="room.img" alt="">
                     <div class="Discription">
                         <div class="info">
