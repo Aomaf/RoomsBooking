@@ -1,76 +1,97 @@
-//import App from ' /App vue'
+const roomFacilities = ["Private bathroom", "Air conditioning", "Balcony", "Bathtub", "Coffee", "machine", "Electric", "kettle", "Flat screenTV", "Kitchen", "Soundproof", "Tea", "Coffee maker", "Washing machine"];
+
+const roomAccessibility = ["Upper floors accessible by elevator", "Walk-in Shower", "Toilet With Grab Rails", "Roll-in Shower", "Lower Sink", "Raised Toilet Shower Chair"];
 
 
 const roomsList = [
     {
-        img: 'https://picsum photos/250/150',
+        img: 'http://www.easyjet.com/en/holidays/thumb/giata/bigger/00/001665/001665a_hb_ro_026.jpg',
+
         type: 'vip',
         size: 'larg',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
-        servces: [],
+        roomFacilities: ["Private bathroom", "Air conditioning", "Coffee", "machine", "Electric", "Tea", "Coffee maker", "Washing machine"],
+        roomAccessibility: ["Upper floors accessible by elevator", "Walk-in Shower", "Toilet With Grab Rails", "Roll-in Shower", "Lower Sink", "Raised Toilet Shower Chair"],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150',
+        img: 'https://picsum.photos/200/300',
         type: 'vip',
         size: 'small',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
-        servces: [],
+        roomFacilities: ["Private bathroom", "Air conditioning", "Balcony", "Bathtub", "Kitchen", "Soundproof", "Tea", "Coffee maker", "Washing machine"],
+        roomAccessibility: ["Upper floors accessible by elevator", "Walk-in Shower", "Toilet With Grab Rails", "Roll-in Shower", "Lower Sink", "Raised Toilet Shower Chair"],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150',
+        img: 'http://www.easyjet.com/en/holidays/thumb/giata/bigger/00/001665/001665a_hb_ro_026.jpg',
+
         type: 'special',
         size: 'small',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
-        servces: [],
+        roomFacilities: ["kettle", "Flat screenTV", "Kitchen", "Soundproof", "Tea", "Coffee maker", "Washing machine"],
+        roomAccessibility: ["Upper floors accessible by elevator", "Walk-in Shower", "Toilet With Grab Rails", "Roll-in Shower", "Lower Sink", "Raised Toilet Shower Chair"],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150',
+        img: 'http://www.easyjet.com/en/holidays/thumb/giata/bigger/00/001665/001665a_hb_ro_026.jpg',
+
         type: 'special',
         size: 'small',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
-        servces: [],
+        roomFacilities: ["Bathtub", "Coffee", "machine", "Electric", "kettle", "Flat screenTV", "Kitchen", "Soundproof", "Tea", "Coffee maker", "Washing machine"],
+        roomAccessibility: ["Toilet With Grab Rails", "Roll-in Shower", "Lower Sink", "Raised Toilet Shower Chair"],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150',
+        img: 'http://www.easyjet.com/en/holidays/thumb/giata/bigger/00/001665/001665a_hb_ro_026.jpg',
+
         type: 'vip',
         size: 'medium',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
-        servces: [],
+        roomFacilities: ["Bathtub", "Coffee", "machine", "Electric", "kettle", "Coffee maker", "Washing machine"],
+        roomAccessibility: ["Upper floors accessible by elevator", "Roll-in Shower", "Lower Sink", "Raised Toilet Shower Chair"],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150',
+        img: 'http://www.easyjet.com/en/holidays/thumb/giata/bigger/00/001665/001665a_hb_ro_026.jpg',
+
         type: 'special',
         size: 'larg',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
-        servces: [],
+        roomFacilities: ["Private bathroom", "Air conditioning", "Tea", "Coffee maker", "Washing machine"],
+        roomAccessibility: ["Upper floors accessible by elevator", "Walk-in Shower", ],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150',
+        img: 'http://www.easyjet.com/en/holidays/thumb/giata/bigger/00/001665/001665a_hb_ro_026.jpg',
+
         type: 'normal',
         size: 'small',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
-        servces: [],
+        roomFacilities: ["Private bathroom", "Air conditioning", "Tea", "Coffee maker", "Washing machine"],
+        roomAccessibility: ["Upper floors accessible by elevator", "Walk-in Shower", "Raised Toilet Shower Chair"],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150',
+        img: 'http://www.easyjet.com/en/holidays/thumb/giata/bigger/00/001665/001665a_hb_ro_026.jpg',
+
         type: 'special',
         size: 'medium',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
-        servces: [],
+        roomFacilities: ["Private bathroom", "Air conditioning", "Balcony", "Coffee maker", "Washing machine"],
+        roomAccessibility: ["Toilet With Grab Rails", "Roll-in Shower", "Lower Sink", "Raised Toilet Shower Chair"],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150',
+        img: 'http://www.easyjet.com/en/holidays/thumb/giata/bigger/00/001665/001665a_hb_ro_026.jpg',
+
         type: 'normal',
         size: 'small',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
-        servces: [],
+        roomFacilities: ["Private bathroom", "kettle", "Flat screenTV", "Kitchen", "Soundproof", "Tea", "Coffee maker", "Washing machine"],
+        roomAccessibility: ["Upper floors accessible by elevator", "Walk-in Shower", "Toilet With Grab Rails"],
         price: '400$'
     }, {
-        img: 'https://picsum photos/250/150',
+        img: 'http://www.easyjet.com/en/holidays/thumb/giata/bigger/00/001665/001665a_hb_ro_026.jpg',
+
         type: 'vip',
         size: 'larg',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
-        servces: [],
+        roomFacilities: ["Private bathroom", "Air conditioning", "Coffee", "machine", "Electric", , "Flat screenTV", "Tea", "Coffee maker"],
+        roomAccessibility: ["Walk-in Shower", "Toilet With Grab Rails", "Lower Sink", "Raised Toilet Shower Chair"],
         price: '400$'
     }
 ];
@@ -80,7 +101,12 @@ export default {
             work: 'Filter By :',
             type: '',
             size: '',
-            rooms: roomsList
+            rooms: roomsList,
+            fullCattegroysList: '',
+            roomFacilities,
+            roomAccessibility,
+            checkedFacilities: [],
+            checkedAccessibility: []
         }
     },
     methods: { //no need to pass an event arguments vue automaticly knew tha👀t

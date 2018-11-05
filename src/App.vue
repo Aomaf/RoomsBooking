@@ -15,6 +15,19 @@
                 </select>
             </div>
             <div class="checkBoxes">
+                <ul class="rF-ul">
+                    <li class="rf-Li" v-for="rf in roomFacilities">
+                        <input type="checkbox" v-bind:id="rf" v-bind:value="rf" v-model="checkedFacilities">
+                        <label v-bind:for="rf">{{rf}}</label>
+                    </li>
+
+                </ul>
+                <ul class="rA-ul">
+                    <li class="rA-li" v-for="ra in roomAccessibility">
+                        <input type="checkbox" v-bind:id="ra" v-bind:value="ra" v-model="checkedAccessibility">
+                        <label v-bind:for="ra">{{ra}}</label>
+                    </li>
+                </ul>
 
             </div>
         </div>
