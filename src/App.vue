@@ -5,26 +5,26 @@
         <div class="filters-sideBar">
             <h1>{{work}}</h1>
             <div class="dropDown">
-                <select name="" id="typeFilter" v-on:change="roomFilterByType">
+                <select id="typeFilter" v-on:change="roomFilterByType">
                     <option value="Select room Type">Select room Type</option>
                     <option v-bind:vlue="type" v-for="type in uniqueTypes">{{type}}</option>
                 </select>
                 <select name="" id="sizeFilter" v-on:change="roomFilterBySize">
-                    <option value="">select room Size</option>
+                    <option>select room Size</option>
                     <option v-bind:value="size" v-for="size in uniqueSizes">{{size}}</option>
                 </select>
             </div>
             <div class="checkBoxes">
                 <ul class="rF-ul">
                     <li class="rf-Li" v-for="rf in roomFacilities">
-                        <input type="checkbox" v-bind:id="rf" v-bind:value="rf" v-model="checkedFacilities">
+                        <input class="checkbox" type="checkbox" v-bind:id="rf" v-bind:value="rf" v-model="checkedFacilities" v-on:change="compareCategories">
                         <label v-bind:for="rf">{{rf}}</label>
                     </li>
-
+                    <hr>
                 </ul>
                 <ul class="rA-ul">
                     <li class="rA-li" v-for="ra in roomAccessibility">
-                        <input type="checkbox" v-bind:id="ra" v-bind:value="ra" v-model="checkedAccessibility">
+                        <input class="checkbox" type="checkbox" v-bind:id="ra" v-bind:value="ra" v-model="checkedAccessibility" v-on:change="compareCategories">
                         <label v-bind:for="ra">{{ra}}</label>
                     </li>
                 </ul>
@@ -41,7 +41,7 @@
                         <div class="info">
                             <h2>FavoRoom</h2>
                             <p>{{room.info}}</p>
-                            <p>{{room.type}}</p>
+                            <p><span>{{room.type}}</span>{{ room.size}}<span></span></p>
                         </div>
                         <button class="price-btn">{{room.price}}</button>
                     </div>

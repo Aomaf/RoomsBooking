@@ -1,7 +1,6 @@
-const roomFacilities = ["Private bathroom", "Air conditioning", "Balcony", "Bathtub", "Coffee", "machine", "Electric", "kettle", "Flat screenTV", "Kitchen", "Soundproof", "Tea", "Coffee maker", "Washing machine"];
+const roomFacilities = ["Private bathroom", "Air conditioning", "Balcony", "Bathtub", "Coffee", "machine", "Electric", "Flat screenTV", "Kitchen", "Soundproof", "Tea", "Coffee maker", "Washing machine"];
 
-const roomAccessibility = ["Upper floors accessible by elevator", "Walk-in Shower", "Toilet With Grab Rails", "Roll-in Shower", "Lower Sink", "Raised Toilet Shower Chair"];
-
+const roomAccessibility = ["Upper floors accessible by elevator", "Walk-in Shower", "Toilet With Grab Rails", "Lower Sink", "Raised Toilet Shower Chair"];
 
 const roomsList = [
     {
@@ -90,7 +89,7 @@ const roomsList = [
         type: 'vip',
         size: 'larg',
         info: 'Proactively simplify proactive methods of empowerment vis-a-vis.',
-        roomFacilities: ["Private bathroom", "Air conditioning", "Coffee", "machine", "Electric", , "Flat screenTV", "Tea", "Coffee maker"],
+        roomFacilities: ["Private bathroom", "Air conditioning", "Coffee", "machine", "Electric", "Flat screenTV", "Tea", "Coffee maker"],
         roomAccessibility: ["Walk-in Shower", "Toilet With Grab Rails", "Lower Sink", "Raised Toilet Shower Chair"],
         price: '400$'
     }
@@ -106,17 +105,30 @@ export default {
             roomFacilities,
             roomAccessibility,
             checkedFacilities: [],
-            checkedAccessibility: []
+            checkedAccessibility: [],
+            showChecked: false
         }
     },
     methods: { //no need to pass an event arguments vue automaticly knew tha👀t
         roomFilterByType: function (event) {
-            console.log(event.target.value);
+            //            console.log(event.target.value);
             this.type = event.target.value;
         },
         roomFilterBySize: function (event) {
-            console.log(event.target.value);
+            //            console.log(event.target.value);
             this.size = event.target.value;
+        },
+        compareCategories: function () {
+            this.roomFacilities.forEach(facilitie => {
+                if (this.checkedFacilities.includes(facilitie)) {
+                    this.showChecked = true;
+                }
+            });
+            this.roomAccessibility.forEach(accessibility => {
+                if (this.checkedFacilities.includes(accessibility)) {
+                    this.showChecked = true;
+                }
+            });
         }
     },
     computed: {

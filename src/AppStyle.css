@@ -9,14 +9,26 @@ body {
 
 #app {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 350px 1fr;
+    position: relative;
 }
 
 .filters-sideBar {
+    position: fixed;
     /*    background-color: #558;*/
     display: flex;
     flex-direction: column;
     padding: 30px;
+    margin: 10px;
+    padding: 10px;
+    height: 1000px;
+    overflow: auto;
+    padding: 10px;
+}
+
+.filters-sideBar h1 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
 }
 
 .dropDown {
@@ -27,8 +39,15 @@ body {
 .filters-sideBar .dropDown select {
     padding: 10px 20px;
     border-radius: 4px;
-    margin: 10px auto;
-    box-shadow: 0 5px 14px 2px rgba(94, 96, 186, .1);
+    margin: 10px;
+    border: 0;
+    box-shadow: 0 3px 14px 2px rgba(94, 96, 186, .2);
+}
+
+.container {
+    position: absolute;
+    right: 0;
+    margin-left: 350px;
 }
 
 .container .roomsList {
@@ -43,7 +62,8 @@ body {
     flex-direction: column;
     align-items: center;
 
-    width: 450px;
+
+    width: 440px;
     height: 450px;
     margin: 30px;
     margin-left: 0px;
@@ -55,7 +75,7 @@ body {
 
 .container ul li img {
     width: 100%;
-    height: 100%;
+    height: 500px;
 }
 
 .container ul li .Discription h2 {
@@ -65,11 +85,13 @@ body {
 .container ul li .Discription {
     background-color: #fff;
     width: 100%;
+    height: 40%;
     padding: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 
 .container ul li .Discription .info {
     width: 60%;
@@ -94,6 +116,80 @@ body {
     border: none;
     z-index: 2;
     box-shadow: 0 5px 14px 2px rgba(94, 96, 186, .1);
+}
 
+.checkBoxes ul {
+    list-style: none;
+    padding: 0 10px;
+}
 
+.checkBoxes ul li input[type="checkbox"] {
+    position: absolute;
+    left: -1000px;
+}
+
+.checkBoxes ul li {
+    position: relative;
+    margin: 5px 15px;
+    line-height: 1.3;
+    font-size: 15px;
+    color: #555;
+}
+
+.checkBoxes ul li:hover,
+li label:hover {
+    cursor: pointer;
+}
+
+hr {
+    margin: 15px 0;
+    border: 1px solid #eee;
+}
+
+.checkBoxes ul li label {
+    margin-left: 15px;
+}
+
+input[type="checkbox"] + label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 15px;
+    height: 15px;
+    margin: 2px;
+    border-radius: 4px;
+    background: transparent;
+    overflow: hidden;
+    border: 1px solid #eee;
+    z-index: 2;
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, .1);
+}
+
+.checkBoxes input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+input[type="checkbox"] + label::after {
+
+    content: "\2713";
+    position: absolute;
+    top: 0;
+    left: -9px;
+    width: 14px;
+    height: 14px;
+    padding: 1px;
+    opacity: 0;
+    margin: 2px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    background: #FBD336;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    transform: scale(.5);
+    transition: all .2s linear;
 }
