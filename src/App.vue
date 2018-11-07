@@ -2,6 +2,7 @@
 <template>
     <!-- we have to have one element sround every thing -->
     <div id="app">
+        <div class="cPath"></div>
         <div class="filters-sideBar">
             <h1>{{work}}</h1>
             <div class="dropDown">
