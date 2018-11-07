@@ -144,6 +144,9 @@ export default {
         },
         filteredRooms: function () {
             return this.rooms.filter(room => {
+                if (this.fiteringOption.type === 'All types' || this.fiteringOption.sizes === 'All sizes') {
+                    return true;
+                }
                 if (this.fiteringOption.type !== 'All types' && room.type !== this.fiteringOption.type) {
                     return false; //if room type dosent match all types or the selected option filter it out 
                 }
