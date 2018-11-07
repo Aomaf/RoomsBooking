@@ -42,7 +42,7 @@
                         <div class="info">
                             <h2>FavoRoom</h2>
                             <p>{{room.info}}</p>
-                            <p><span>{{room.type}}</span>{{ room.size}}<span></span></p>
+                            <p class="aboutRoom"><span v-bind:class="room.type">{{room.type}}</span><span v-bind:class="room.size">{{ room.size}}</span></p>
                         </div>
                         <button class="price-btn">{{room.price}}</button>
                     </div>
