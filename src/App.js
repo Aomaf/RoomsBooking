@@ -98,38 +98,30 @@ export default {
     data() {
         return {
             work: 'Filter By :',
-            type: '',
-            size: '',
+
             rooms: roomsList,
             fullCattegroysList: '',
             roomFacilities,
             roomAccessibility,
-            checkedFacilities: [],
-            checkedAccessibility: [],
+            fiteringOption: {
+                type: 'All types',
+                size: 'All sizes',
+                checkedFacilities: [],
+                checkedAccessibility: []
+            },
             showChecked: false
         }
     },
-    methods: { //no need to pass an event arguments vue automaticly knew tha👀t
+    methods: {
         roomFilterByType: function (event) {
             //            console.log(event.target.value);
-            this.type = event.target.value;
+            this.fiteringOption.type = event.target.value;
         },
         roomFilterBySize: function (event) {
             //            console.log(event.target.value);
-            this.size = event.target.value;
-        },
-        compareCategories: function () {
-            this.roomFacilities.forEach(facilitie => {
-                if (this.checkedFacilities.includes(facilitie)) {
-                    this.showChecked = true;
-                }
-            });
-            this.roomAccessibility.forEach(accessibility => {
-                if (this.checkedFacilities.includes(accessibility)) {
-                    this.showChecked = true;
-                }
-            });
+            this.fiteringOption.size = event.target.value;
         }
+
     },
     computed: {
         uniqueTypes: function () {
@@ -149,6 +141,23 @@ export default {
                 }
             });
             return sizes;
+        },
+        filteredRooms: function () {
+            return this.rooms.filter(room => {
+                if (this.fiteringOption.type !== 'All types' && room.type !== this.fiteringOption.type) {
+                    return false; //if room type dosent match all types or the selected option filter it out 
+                }
+                if (this.fiteringOption.type !== 'All sizes' && room.type !== this.fiteringOption.type) {
+                    return false;
+                }
+                if (!room.roomFacilities.includes(...this.fiteringOption.checkedFacilities)) {
+                    return false; //filter out the room out if it dosent have the specified facilities
+                }
+                if (!room.roomAccessibility.includes(...this.fiteringOption.checkedAccessibility)) {
+                    return false;
+                }
+                return true;
+            });
         }
     }
 }
